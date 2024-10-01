@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <div class="nav-row-1-wrapper">
+            <div class="container-fluid">
+                <div class="row nav-row-wrapper">
+                    <div class="col-1 nav-toggle-btn-wrapper">
+                        <button class="nav-toggle-btn nav-togglemob-btn" onclick="mobileshownav()"><img src="/assets/images/icons/nav-toggle.svg" alt=""></button>
+                    </div>
+                    <div class=" col-lg-2 col-md-3 col-5">
+                        <a href="/index.html" ><img src="/assets/images/logo/logo.svg" alt="" class="nav-logo"></a>
+                    </div>
+                    <div class="col-lg-5 col-md-4 nav-search-wrap-d">
+                        <form id="searchForm" class="nav-search-box-wrapper">
+                            <button  id="getInputValue" type="submit" class="nav-search-btn">
+                                <img src="/assets/images/icons/search-icon.svg" alt="">
+                            </button>
+                            <input type="text" id="Searchbox-prd" class="nav-search-box" placeholder="Search For Products, Brands and More">
+                        </form>
+                    </div>
+                    <div class="col-md-5 col-5">
+                        <ul class="nav-ul-wrapper">
+                            <li class="nav-ul-li  nav-ul-show"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/user.svg" alt=""> <span>Login</span> <img src="/assets/images/icons/down-arrow.svg" class="nav-arrow-ro" alt=""></a>
+                                <ul class="nav-ul-drop">
+                                    <li><a href="" class="nav-ul-drop-li-c"><span>New Customer?</span><span class="nav-sign-color">Sign Up</span></a></li>
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/user.svg" alt=""> <span>My Profile</span></a>
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/nav-plus.svg" alt=""> <span>Flipkart Plus Zone</span></a>
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/nav-order-box.svg" alt=""> <span>Orders</span></a>
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/reward.svg" alt=""> <span>Reward</span></a>
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/gift-card.svg" alt=""> <span>Gift Cards</span></a>
+                                    
+                                </ul>
+                            </li>
+                            <li class="nav-ul-li header-cart-pos-r" ><a href="/cart.html" class="nav-ul-li-a"><img src="/assets/images/icons/cart.svg" alt=""><span class="nav-ipad-span">Cart</span> <span class="header-cart-pos" id="heatercart-count">0</span></a></li>
+                            <li class="nav-ul-li header-cart-pos-r"><a href="/wishlist.html" class="nav-ul-li-a"><img src="/assets/images/icons/whislist.svg" alt=""><span class="nav-ipad-span">Wishlist</span> <span class="header-cart-pos" id="wishlistcount">0</span></a></li>
+                            <li class="nav-ul-li nav-mob-dn"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/nav-shop.svg" alt=""><span class="nav-ipad-span"> Become a Seller</span></a></li>
+                            <li class="nav-ul-li nav-ul-show-2 nav-mob-dn"><img src="/assets/images/icons/nav-dots.svg" class="nav-dot-btn" alt="">
+                                <ul class="nav-ul-drop-2">
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/notification.svg" alt=""> <span>Notification Preferences</span></a>
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/helpcenter.svg" alt=""> <span>24x7 Customer Care </span></a>
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/advertise.svg" alt=""> <span>Advertise</span></a>
+                                    <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><img src="/assets/images/icons/download.svg" alt=""> <span>Download App</span></a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 mt-3 nav-saerch-box-2">
+                        <form action="" class="nav-search-box-wrapper">
+                            <button class="nav-search-btn"><img src="/assets/images/icons/search-icon.svg" alt=""></button>
+                            <input type="search" class="nav-search-box"  placeholder="Search For Products,Brands and More">
+                        </form>
+                    </div>
+                </div>
+                <div class="nav-toggle-wrapper" >
+                    <div class="nav-toggle-wrapper-inner">
+                        <div class="nav-mob-log-wrapp">
+                            <a href="" class="nav-mob-a-ls"><img src="/assets/images/icons/user-1.svg" height="14px" alt=""><span>Login & Signup</span></a>
+                            <button class="nav-mob-close" onclick="mobileremovenav()" style="background-color: transparent;border: none;"><img src="/assets/images/icons/x.svg" alt=""></button>
+                        </div>
+                        <div>
+                            <ul class="nav-mobile-ul-wrapper">
+                                <li class="nav-mobile-ul-t-li mt-1"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/coin.webp" class="mob-nav-icon-img" alt=""><span>Super Coin Zone</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/plus.webp" class="mob-nav-icon-img" alt=""><span>Flipkart Plus Zone</span></a></li>
+                                <hr class="m-0">
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/all-cat.webp" class="mob-nav-icon-img" alt=""><span>All Categories</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/more.webp" class="mob-nav-icon-img" alt=""><span>More on Flipkart</span></a></li>
+                                <hr class="m-0">
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/offer.webp" class="mob-nav-icon-img" alt=""><span>Offer Zone</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/sell.webp" class="mob-nav-icon-img" alt=""><span>Sell on Flipkart</span></a></li>
+                                <hr class="m-0">
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/myorder.webp" class="mob-nav-icon-img" alt=""><span>My Orders</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/coupones.webp" class="mob-nav-icon-img" alt=""><span>Coupons</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/cart.webp" class="mob-nav-icon-img" alt=""><span>My Cart</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/wishlist.webp" class="mob-nav-icon-img" alt=""><span>My Wishlist</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/myaccount.webp" class="mob-nav-icon-img" alt=""><span>My Account</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><img src="/assets/images/icons/notification.webp" class="mob-nav-icon-img" alt=""><span>My Notification</span></a></li>
+                                <hr class="m-0">
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><span>Notification Preferences</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><span>Help Center</span></a></li>
+                                <li class="nav-mobile-ul-t-li"><a href="" class="nav-mobile-ul-t-li-a"><span>Legal</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="/assets/js/main.js"></script>
+<script >
+    document.getElementById("searchForm").addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent form submission
+        let searchValue = document.getElementById('Searchbox-prd').value;
+        console.log(searchValue);
+        
+        window.location.href = `/product/products.html?categories=${searchValue}`
+    });
+    productsInCart()
+    productsInwishlist()
+</script>
+
+</body>
+</html>

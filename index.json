@@ -1,0 +1,130 @@
+{
+    "inxBestFashion": [
+        {
+            "title": "Mobile Pouches",
+            "image": "/assets/images/fashion/pouch.webp",
+            "link": "#",
+            "pricedecrip": "From ₹99/"
+        },
+        {
+            "title": "Metronaut, Adrenex...",
+            "image": "/assets/images/fashion/metronaut.png",
+            "link": "#",
+            "pricedecrip": "Under 349/-"
+        },
+        {
+            "title": "Branded Kurtas",
+            "image": "/assets/images/fashion/kurthas.webp",
+            "link": "#",
+            "pricedecrip": "From ₹399"
+        },
+        {
+            "title": "Sabse Badi Deals",
+            "image": "/assets/images/fashion/sashi-badi-deal.webp",
+            "link": "#",
+            "pricedecrip": "Min 70% Off"
+        },
+        {
+            "title": "Flying Machine, People, Kazo",
+            "image": "/assets/images/fashion/stylefabs.webp",
+            "link": "#",
+            "pricedecrip": "From ₹149"
+        },
+        {
+            "title": "Sabse Badi Deals",
+            "image": "/assets/images/fashion/sashi-badi-deal.webp",
+            "link": "#",
+            "pricedecrip": "Min 70% Off"
+        },
+        {
+            "title": "Flying Machine, People, Kazo",
+            "image": "/assets/images/fashion/stylefabs.webp",
+            "link": "#",
+            "pricedecrip": "From ₹149"
+        },
+        {
+            "title": "Women's Sandals",
+            "image": "/assets/images/fashion/mochi-28-antique.jpg",
+            "link": "#",
+            "pricedecrip": "Under ₹399"
+        },
+        {
+            "title": "Women's Sandals",
+            "image": "/assets/images/fashion/mochi-28-antique.jpg",
+            "link": "#",
+            "pricedecrip": "Under ₹399"
+        }
+    ],
+    "productCategories": [
+        {
+            "title": "Mobile",
+            "image": "/assets/images/index-page/mobile.webp",
+            "link": "#"
+        },
+        {
+            "title": "Electronics",
+            "image": "/assets/images/index-page/electronic.webp",
+            "link": "#"
+        },
+        {
+            "title": "Fashion",
+            "image": "/assets/images/index-page/fashion.webp",
+            "link": "#"
+        },
+        {
+            "title": "Home & Furniture",
+            "image": "/assets/images/index-page/furniture.webp",
+            "link": "#"
+        },
+        {
+            "title": "Appliances",
+            "image": "/assets/images/index-page/appliances.webp",
+            "link": "#"
+        },
+        {
+            "title": "Two Wheelers",
+            "image": "/assets/images/index-page/bikes.webp",
+            "link": "#"
+        }
+    ],
+    "Electronics": [
+        {
+            "id": 1,
+            "title": "Aquaguard Aura 7 L RO + UV + UF + MTDS Water Purifier",
+            "rating": 4.1,
+            "price": 14499,
+            "stock": 123,
+            "discountpercentage": 40,
+            "offer": 40,
+            "brand": "Aquaguard Aura",
+            "category": "Electronics",
+            "searchdiscription": "electronic Aquaguard Aura 7 L RO + UV + UF + MTDS Water Purifier",
+            "thumbnail": "/assets/images/electronics/aquaguard.webp",
+            "images": [
+                "/assets/images/electronics/aquaguard.webp",
+                "/assets/images/electronics/aquaguard-img-d1.webp",
+                "/assets/images/electronics/aquaguard-img-d2.webp",
+                "/assets/images/electronics/aquaguard-img-d3.webp"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "PHILIPS BT1233/18 Trimmer 30 min Runtime 4 Length Settings  (Black)",
+            "rating": 0,
+            "price": 945,
+            "stock": 50,
+            "discountpercentage": 26,
+            "offer": 40,
+            "brand": "PHILIPS",
+            "category": "Electronics",
+            "searchdiscription": "PHILIPS BT1233/18 Trimmer 30 min Runtime 4 Length Settings  (Black)",
+            "thumbnail": "/assets/images/electronics/philips.webp",
+            "images": [
+                "/assets/images/electronics/philips.webp",
+                "/assets/images/electronics/philips-img-d-1.webp",
+                "/assets/images/electronics/philips-img-d-2.webp",
+                "/assets/images/electronics/philips-img-d-3.webp"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="/assets/css/slick.css" />
+    <link rel="stylesheet" href="/assets/css/swiper.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+    <div id="header"></div>
+    <!------------Main Start-------------->
+    <main>
+        <!---------Section Start---------->
+        <section>
+            <div class="mt-4">
+                <div class="container">
+                    <div class="row row-gap-2">
+                        <div class="col-lg-8 col-md-12">
+                            <div>
+                                <div class="cart-lft-wrapper">
+                                    <div class="cart-title-wrapper">
+                                        <h5 class="cart-title">
+                                            My Cart (<span id="heatercartCount">0</span>)
+                                        </h5>
+                                    </div>
+                                    <div id="cartData">
+                                        <!-- <div class="cart-item-wrapper">
+                                            <a href="">
+                                                <div class="row cart-item-inner">
+                                                    <div class="col-md-2">
+                                                        <img src="/assets/images/electronics/aquaguard.webp" alt="" class="cart-img-w">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h5>Aquaguard Aura 7 L RO + UV + UF + MTDS Water Purifier</h5>
+                                                        <p>Seller: Green Soul</p>
+                                                        <div class="prod-card-price-wrapper">
+                                                            <h6 class="prod-card-price-h">₹90,000</h6> 
+                                                            <p class="prod-card-price-orp">₹122,000</p>
+                                                            <p class="prod-card-price-ofr">27% off</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div>
+                                                            <p class="cart-delevery-t">Delivery by Fri Jul 19 | <span>Free</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="cart-item-dis-wrap">
+                                                <div class="cart-item-btn-wrapper">
+                                                    <button class="cart-item-btn-mm">-</button>
+                                                    <input type="text" class="cart-item-btn-input">
+                                                    <button class="cart-item-btn-mm">+</button>
+                                                </div>
+                                                <div>
+                                                    <button class="cart-tem-save-btn">Save For Later</button>
+                                                    <button class="cart-tem-save-btn"> Remove</button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="cart-lft-wrapper">
+                                    <div class="cart-title-wrapper">
+                                        <h5 class="cart-title" >
+                                            Save For Later (<span id="saveForLatercout">0</span>)
+                                        </h5>
+                                    </div>
+                                    <div id="SaveforLater">
+                                        <!-- <div class="cart-item-wrapper">
+                                            <a href="">
+                                                <div class="row cart-item-inner">
+                                                    <div class="col-md-2">
+                                                        <img src="/assets/images/electronics/aquaguard.webp" alt=""
+                                                            class="cart-img-w" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h5>
+                                                            Aquaguard Aura 7 L RO + UV + UF + MTDS Water
+                                                            Purifier
+                                                        </h5>
+                                                        <p>Seller: Green Soul</p>
+                                                        <div class="prod-card-price-wrapper">
+                                                            <h6 class="prod-card-price-h">₹90,000</h6>
+                                                            <p class="prod-card-price-orp">₹122,000</p>
+                                                            <p class="prod-card-price-ofr">27% off</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div>
+                                                            <p class="cart-delevery-t">
+                                                                Delivery by Fri Jul 19 | <span>Free</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="cart-item-dis-wrap">
+                                                <div class="cart-item-btn-wrapper">
+                                                    <button class="cart-item-btn-mm">-</button>
+                                                    <input type="text" class="cart-item-btn-input" />
+                                                    <button class="cart-item-btn-mm qty">+</button>
+                                                </div>
+                                                <div>
+                                                    <button class="cart-tem-save-btn">
+                                                        Save For Later
+                                                    </button>
+                                                    <button class="cart-tem-save-btn">Remove</button>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="cart-price-wrapper" id="pricedetails">
+                                <!-- <h3 class="cart-item-pricet">PRICE DETAILS </h3>
+                                <div class="price-t-wrapper-cart">
+                                    <h5 class="cart-item-pricet2">Price (<span>1</span> item)</h5>
+                                    <h5 class="cart-item-pricet2">₹2,33,897</h5>
+                                </div>
+                                <div class="price-t-wrapper-cart">
+                                    <h5 class="cart-item-pricet2">Discount</h5>
+                                    <h5 class="cart-item-price-grn">-₹2,33,897</h5>
+                                </div>
+                                <div class="price-t-wrapper-cart ">
+                                    <h5 class="cart-item-pricet2">Delivery Charges</h5>
+                                    <h5 class="cart-item-price-grn">Free</h5>
+                                </div>
+                                <div class="price-t-wrapper-cart price-caert-border-btm">
+                                    <h5 class="cart-item-total">Total Amount</h5>
+                                    <h5 class="cart-item-total">₹2,33,897</h5>
+                                </div>
+                                <h4 class="cart-item-charge">You will save <span> ₹15,000 </span>on this order</h4> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---------Section End---------->
+    </main>
+    <!------------Main End-------------->
+    <div id="footer"></div>
+
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/slick.js"></script>
+    <script src="/assets/js/fontawesome.js"></script>
+    <script src="/assets/js/swiper.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <script>
+        let cartdata = JSON.parse(localStorage.getItem("cart"));
+
+        function cartproductappend(){
+            cartdata = JSON.parse(localStorage.getItem("cart"));
+            let html = "";
+            let pricedetails = `<h3 class="cart-item-pricet">PRICE DETAILS </h3>`;
+            let totalprice = 0;
+            let discountprice = 0;
+            for(let i=0;i<cartdata.length;i++){
+                totalprice += cartdata[i].price * cartdata[i].quantity;
+                discountprice +=(cartdata[i].price *cartdata[i].quantity * cartdata[i].discountPercentage) /100;
+                html += `<div class="cart-item-wrapper">
+                            <a href="/product/productdetails.html?id=${cartdata[i].id}&categories=${cartdata[i].category.slice(0,cartdata[i].category.indexOf(" "))}">
+                                <div class="row cart-item-inner">
+                                    <div class="col-md-3 text-center">
+                                        <img src="${cartdata[i].thumbnail}" alt="" class="cart-img-w">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <h5 class="cart-t-h">${cartdata[i].title}</h5>
+                                        <p>Seller: Green Soul</p>
+                                        <div class="prod-card-price-wrapper">
+                                            <h6 class="prod-card-price-h">₹${cartdata[i].price -(cartdata[i].price *cartdata[i].discountPercentage) /100}</h6> 
+                                            <p class="prod-card-price-orp">₹${cartdata[i].price}</p>
+                                            <p class="prod-card-price-ofr">${cartdata[i].discountPercentage}% off</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div>
+                                            <p class="cart-delevery-t">Delivery by ${Math.floor(Math.random() * 10)} | <span>Free</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="cart-item-dis-wrap">
+                                <div class="cart-item-btn-wrapper">
+                                    <button class="cart-item-btn-mm qty" onclick="cartQuantitycount(${cartdata[i].id},-1)">-</button>
+                                    <span id="addtoCartq${cartdata[i].id}">${cartdata[i].quantity}</span>
+                                    <button class="cart-item-btn-mm qty" onclick="cartQuantitycount(${cartdata[i].id},1)">+</button>
+                                </div>
+                                <div>
+                                    <button class="cart-tem-save-btn " onclick="SaveForLater(${cartdata[i].id})">Save For Later</button>
+                                    <button class="cart-tem-save-btn remove" onclick="removefromCart(${cartdata[i].id})"> Remove</button>
+                                </div>
+                            </div>
+                        </div>`
+                    pricedetails += `<div class="price-t-wrapper-cart">
+                                        <h5 class="cart-item-pricet2">${cartdata[i].title} (<span>${cartdata[i].quantity}</span> item)</h5>
+                                        <h5 class="cart-item-pricet2">₹${totalprice}</h5>
+                                    </div>`;
+            }
+                    
+                    pricedetails += `<div class="price-t-wrapper-cart">
+                                        <h5 class="cart-item-pricet2">Discount</h5>
+                                        <h5 class="cart-item-price-grn">-₹${Math.floor(discountprice)}</h5>
+                                    </div>
+                                    <div class="price-t-wrapper-cart ">
+                                        <h5 class="cart-item-pricet2">Delivery Charges</h5>
+                                        <h5 class="cart-item-price-grn">Free</h5>
+                                    </div>
+                                    <div class="price-t-wrapper-cart price-caert-border-btm">
+                                        <h5 class="cart-item-total">Total Amount</h5>
+                                        <h5 class="cart-item-total">₹${totalprice - Math.floor(discountprice)}</h5>
+                                    </div>
+                                    <h4 class="cart-item-charge">You will save <span> ₹${Math.floor(discountprice)} </span>on this order</h4>`;
+                    $("#cartData").html(html);
+                    $("#pricedetails").html(pricedetails);
+                    document.getElementById("heatercartCount").innerHTML =cartdata.length;
+                    productsInCart()
+        }
+            cartproductappend()
+
+        //Increase Decrease button
+        // setTimeout(() => {
+        //     for (let i = 0; i < $(".cart-item-btn-mm").length; i++) {
+        //         $($(".cart-item-btn-mm")[i]).click(function () {
+        //             for (let i = 0; i < cartdata.length; i++) {
+        //                 if (cartdata[i].id ==$(this).siblings("span")[0].attributes[0].value) {
+        //                     if ($(this).text() == "+") {
+        //                         cartdata[i].quantity = cartdata[i].quantity + 1;
+        //                     } else {
+        //                         if(cartdata[i].quantity>0){
+        //                             cartdata[i].quantity = cartdata[i].quantity - 1;
+        //                         }
+        //                     }
+        //                     $($(this).siblings("span")[0]).html(cartdata[i].quantity);
+        //                     cartdata = cartdata.filter((val) => val.quantity > 0);
+        //                     localStorage.setItem("cart", JSON.stringify(cartdata));
+        //                 }
+                        
+        //             }
+        //         });
+        //     }
+        //     // $(".remove").click(function () {
+        //     //     console.log(
+        //     //         $($(this).parent().siblings()[0]).children("span")[0].attributes[0]
+        //     //             .value
+        //     //     );
+        //     //     var index = $($(this).parent().siblings()[0]).children("span")[0]
+        //     //         .attributes[0].value;
+        //     //     cartdata = cartdata.filter((data) => data.id != index);
+        //     //     localStorage.setItem("cart", JSON.stringify(cartdata));
+        //     //     cartproductappend();
+        //     // });
+        // }, 2000);
+
+        // Remove From Cart
+        function removefromCart(data){
+            cartdata = cartdata.filter((val) => val.id != data);
+            localStorage.setItem("cart", JSON.stringify(cartdata));
+            cartproductappend();
+        }
+    </script>
+    <script>
+        // Add Cart Item to Savefor Later
+        function SaveForLater(data){
+            let saveforlater=JSON.parse(localStorage.getItem("SaveForLater"))||[]
+            let cartItem=JSON.parse(localStorage.getItem("cart"))
+            let indexOf=cartItem.findIndex(val=>val.id==data)
+            saveforlater.push(cartItem[indexOf])
+            localStorage.setItem("SaveForLater",JSON.stringify(saveforlater))
+            cartItem=cartItem.filter(val=>val.id !==cartItem[indexOf].id)
+            localStorage.setItem("cart",JSON.stringify(cartItem))
+            SaveForlaterdataapp()
+            cartproductappend()
+        }
+        // Save For Later html data
+        function SaveForlaterdataapp(){
+            let saveforlater=JSON.parse(localStorage.getItem("SaveForLater"))||[]
+            let cartItem=JSON.parse(localStorage.getItem("cart"))
+            let ref=[]
+            let html=""
+            for(let i=0;i<saveforlater.length;i++){
+                let extIndex=cartItem.findIndex(val=>val.id==saveforlater[i].id)
+                
+                if(extIndex<0){
+                    html+=` <div class="cart-item-wrapper">
+                                            <a href="">
+                                                <div class="row cart-item-inner">
+                                                    <div class="col-md-3 text-center">
+                                                        <img src="${saveforlater[i].thumbnail}" alt=""
+                                                            class="cart-img-w" />
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <h5 class="cart-t-h">
+                                                            ${saveforlater[i].title}
+                                                        </h5>
+                                                        <p>Seller: Green Soul</p>
+                                                        <div class="prod-card-price-wrapper">
+                                                            <h6 class="prod-card-price-h">₹${saveforlater[i].price-(saveforlater[i].price*saveforlater[i].discountPercentage/100)}</h6>
+                                                            <p class="prod-card-price-orp">₹${saveforlater[i].price}</p>
+                                                            <p class="prod-card-price-ofr">${saveforlater[i].discountPercentage}% off</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div>
+                                                            <p class="cart-delevery-t">
+                                                                Delivery by  ${Math.floor(Math.random()*10)} | <span>Free</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="cart-item-dis-wrap">
+                                                <div class="cart-item-btn-wrapper">
+                                                    <button class="cart-item-btn-mm" onclick="addsaveforquant(${saveforlater[i].id},-1)">-</button>
+                                                    <input type="text" class="cart-item-btn-input" id="savequantitycount${saveforlater[i].id}" value="${saveforlater[i].quantity}" />
+                                                    <button class="cart-item-btn-mm qty" onclick="addsaveforquant(${saveforlater[i].id},1)">+</button> 
+                                                </div>
+                                                <div>
+                                                    <button class="cart-tem-save-btn" onclick="additemfromSave(${saveforlater[i].id})">
+                                                        Add for Cart
+                                                    </button>
+                                                    <button class="cart-tem-save-btn" onclick="RemovefromSave(${saveforlater[i].id})">Remove</button>
+                                                </div>
+                                            </div>
+                                        </div>`
+                                        ref.push(saveforlater[i])
+                }
+            }
+            localStorage.setItem("SaveForLater",JSON.stringify(ref))
+            document.getElementById("saveForLatercout").innerHTML=ref.length
+            $("#SaveforLater").html(html)
+        }
+        SaveForlaterdataapp()
+    </script>
+
+    <script>
+        //Remove From Save for later
+        function RemovefromSave(data){
+            let saveforlater=JSON.parse(localStorage.getItem("SaveForLater"))||[]
+            saveforlater=saveforlater.filter(val=>val.id!==data)
+            localStorage.setItem("SaveForLater",JSON.stringify(saveforlater))
+            SaveForlaterdataapp()
+        }
+        //Remove From Save for later and add to cart
+        function additemfromSave(data){
+            let saveforlater=JSON.parse(localStorage.getItem("SaveForLater"))||[]
+            let cartItem=JSON.parse(localStorage.getItem("cart"))||[]
+            let extInd=saveforlater.findIndex(val=>val.id==data)
+            cartItem.push(saveforlater[extInd])
+            localStorage.setItem("cart",JSON.stringify(cartItem))
+            saveforlater=saveforlater.filter(val=>val.id !==data)
+            localStorage.setItem("SaveForLater",JSON.stringify(saveforlater))
+            SaveForlaterdataapp()
+            cartproductappend()
+        }
+        //Add Saveforlater cart quantity
+        function addsaveforquant(data,count){
+            let saveforlater=JSON.parse(localStorage.getItem("SaveForLater"))||[]
+            let extInd=saveforlater.findIndex(val=>val.id==data)
+            if(saveforlater[extInd].quantity+count>=0){
+                saveforlater[extInd].quantity+=count
+            }else{
+                saveforlater[extInd].quantity=0
+            }
+            document.getElementById(`savequantitycount${data}`).value = saveforlater[extInd].quantity
+            localStorage.setItem("SaveForLater",JSON.stringify(saveforlater))
+        }
+
+        //Add cart Quantity
+        function cartQuantitycount(data,count){
+            let cart=JSON.parse(localStorage.getItem("cart"))||[]
+            let extInd=cart.findIndex(val=>val.id==data)
+            if(cart[extInd].quantity+count>=0){
+                cart[extInd].quantity+=count
+            }else{
+                cart[extInd].quantity=0
+            }
+            document.getElementById(`addtoCartq${data}`).innerHTML = cart[extInd].quantity
+            localStorage.setItem("cart",JSON.stringify(cart))
+        }
+    </script>
+</body>
+
+</html>

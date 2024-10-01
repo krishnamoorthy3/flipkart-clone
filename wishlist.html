@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/slick.css" />
+    <link rel="stylesheet" href="/assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div id="header"></div>
+    <!--------------Main Start------------------>
+    <main>
+        <section>
+            <div class="container wislist-bg py-5">
+                <div>
+                    <h4>My Wishlist (<span id="wishlist-count">0</span>)</h4>
+                    <hr style="border-color: #bdbdbd;">
+                    <div id="Wishlistproduct">
+                        <!-- <div class="row my-4">
+                            <div class="col-md-2 text-center">
+                                <img src="/assets/images/product-image/id1/thumb-img.webp" width="50%" alt="">
+                            </div>
+                            <div class="col-md-7">
+                                <h6>Xiaomi 14 CIVI (Shadow Black, 256 GB)  (8 GB RAM)</h6>
+                                <div class="prod-detail-text-content">
+                                    <div class="prod-card-rating-wrap ">
+                                        <div>
+                                            <p class="prod-card-rating-p">4.69</p>
+                                        </div>
+                                        <div>
+                                            <img src="/assets/images/icons/star.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="" class="prt-r-pc">(5,69,601)</a>
+                                        <img src="/assets/images/icons/fa_assured.png" width="20%" alt="">
+                                    </div>
+                                </div>
+                                <div class="prod-card-price-wrapper">
+                                    <h6 class="prod-card-price-h">₹25199.1</h6>
+                                    <p class="prod-card-price-orp">₹27999</p>
+                                    <p class="prod-card-price-ofr">10% Off</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="row g-3">
+                                    <div class="col-md-10">
+                                        <button class="add-to-delete-btn" onclick="addToCart()"><img src="/assets/images/icons/delete.svg"> <span>REMOVE</span></button>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <button class="add-to-cart-btn-wish " onclick="addToCart()"><img src="/assets/images/icons/cart-white.svg"> <span>ADD TO CART</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--------------Main End------------------>
+
+    <div id="footer"></div>
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/slick.js"></script>
+    <script src="/assets/js/fontawesome.js"></script>
+    <script src="/assets/js/swiper.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script>
+    
+    </script>
+    <script>
+        
+        
+        function wishlistpdata(){
+            let wishlistdata=JSON.parse(localStorage.getItem("wishlist"))
+            let html=""
+            for(let j=0;j<wishlistdata.length;j++){
+                html+=` <div class="row my-4 mb-5">
+                                <div class="col-md-2 text-center">
+                                    <a href="/product/productdetails.html?id=${wishlistdata[j].id}&categories=${wishlistdata[j].category}"> <img src="${wishlistdata[j].thumbnail}" class="wishlist-img-hei" alt=""></a>
+                                </div>
+                                <div class="col-md-7">
+                                    <a href="/product/productdetails.html?id=${wishlistdata[j].id}&categories=${wishlistdata[j].category.slice(0,wishlistdata[j].category.indexOf(" "))}">
+                                        <h6>${wishlistdata[j].title}</h6>
+                                        <div class="prod-detail-text-content">
+                                            <div class="prod-card-rating-wrap ">
+                                                <div>
+                                                    <p class="prod-card-rating-p">${wishlistdata[j].rating}</p>
+                                                </div>
+                                                <div>
+                                                    <img src="/assets/images/icons/star.svg" alt="">
+                                                </div>
+                                            </div>
+                                            <div >
+                                                <p class="prt-r-pc d-inline-block m-0">(5,69,601)</p>
+                                                <img src="/assets/images/icons/fa_assured.png" width="20%" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="prod-card-price-wrapper">
+                                            <h6 class="prod-card-price-h">₹${Math.floor(wishlistdata[j].price-(wishlistdata[j].price*wishlistdata[j].discountPercentage/100))}</h6>
+                                            <p class="prod-card-price-orp">₹${wishlistdata[j].price}</p>
+                                            <p class="prod-card-price-ofr">${wishlistdata[j].discountPercentage}% Off</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3">
+                                    <div class="row g-3">
+                                        <div class="col-md-10 col-6">
+                                            <button class="add-to-delete-btn" onclick="removefromWishlist(${wishlistdata[j].id})"><img src="/assets/images/icons/delete.svg"> <span>REMOVE</span></button>
+                                        </div>
+                                        <div class="col-md-10 col-6">
+                                            <button class="add-to-cart-btn-wish " onclick="addToCart(${wishlistdata[j].id})"><img src="/assets/images/icons/cart-white.svg"><span>ADD TO CART</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="border-color: #bdbdbd;">`
+                            
+            }
+        $("#Wishlistproduct").html(html)
+        document.getElementById("wishlist-count").innerHTML = wishlistdata.length
+        productinwishlist()
+        }
+        wishlistpdata()
+
+        //Remove item from wishlist
+        function removefromWishlist(data){
+            let wishlistdata=JSON.parse(localStorage.getItem("wishlist"))
+            wishlistdata= wishlistdata.filter((val) => val.id !== data);
+            document.getElementById("wishlistcount").innerHTML = wishlistdata.length
+            localStorage.setItem("wishlist", JSON.stringify(wishlistdata));
+            wishlistpdata()
+            
+        }
+    </script>
+</body>
+</html>

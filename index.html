@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/slick.css"  />
+    <link rel="stylesheet" href="/assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .swiper-button-next, .swiper-button-prev{
+            background-color: #fff;
+            color: #1f1f25;
+            font-size: 12px;
+        }
+        .swiper-button-prev{
+            left: 0;
+        }
+        .swiper-button-next{
+            right: 0;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after{
+            font-size: 15px;
+            font-weight: 800;
+        }
+                /*2 carosel*/
+                .slick-slider .slick-prev,
+.slick-slider .slick-next {
+    z-index: 100;
+    font-size: 2.5em;
+    height: 67px;
+    width: 40px;
+    margin-top: -20px;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    color: #000;
+    transition: opacity 0.25s;
+    cursor: pointer;
+    background-color: #fff !important;
+    border: 1px solid #dfdfdf;
+}
+ .slick-slider .slick-prev:hover,
+.slick-slider .slick-next:hover {
+    opacity: 0.65;
+} 
+.slick-slider .slick-prev {
+    left: 0;
+}
+.slick-slider .slick-next {
+    right: 0;
+}
+.slick-initialized .slick-slide{
+    margin: 0 7px;
+}
+.slick-slide img{
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <!--------------Header Nav Bar Start------------->
+    <div id="header"></div>
+    <!--------------Header Nav Bar End------------->
+    <!--------------Main Start-------------------->
+    <main>
+        <!--------------Section 1 Start-------------------->
+        <section>
+            <div class="flip-index-sec-1-wrapper">
+                <div class="container-fluid">
+                    <div class="flip-index-sec-1-inner">
+                        <div class="container">
+                            <div class="row" id="Categorieopt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--------------Section 1 End-------------------->
+        <!--------------Section 2 Start-------------------->
+        <section>
+            <div class="container-fluid">
+                <div class=" swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="/assets/images/banner/slide-1.webp" width="100%" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="/assets/images/banner/slide-1.webp" width="100%" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div>
+                                <img src="/assets/images/banner/slide-1.webp" width="100%" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <!--------------Section 2 End-------------------->
+        <!--------------Section 3 Start-------------------->
+        <section>
+            <div class="flip-index-sec-3-wrapper">
+                <div class="container-fluid">
+                    <div class="flip-index-sec-3-inner">
+                        <h4 class="indx-title">Best Fashion Brand For You!</h4>
+                        <div>
+                            <div class="row indx-fashion-wrap slick" id="indxBestFashions" >
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--------------Section 3 End-------------------->
+        <!--------------Section 4 Start-------------------->
+        <section>
+            <div class="flip-index-sec-3-wrapper">
+                <div class="container-fluid">
+                    <div class="flip-index-sec-3-inner">
+                        <h4 class="indx-title">Best Smartphones Brand For You!</h4>
+                        <div>
+                            <div class="row indx-fashion-wrap slick" id="indxBestSmartPhones" >
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--------------Section 4 End-------------------->
+    </main>
+    <!--------------Main End-------------------->
+    <!--------------Footer Start-------------------->
+    <div id="footer"></div>
+    <!--------------Footer End-------------------->
+
+
+
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/slick.js"></script>
+    <script src="/assets/js/fontawesome.js"></script>
+    <script src="/assets/js/swiper.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+<script>
+    let html="";
+    let productCategories =[
+        {title:"Mobile",image:"/assets/images/index-page/mobile.webp",link:"/product/products.html?categories=mobile"},
+        {title:"Electronics",image:"/assets/images/index-page/electronic.webp",link:"/product/products.html?categories=electronics"},
+        {title:"Fashion",image:"/assets/images/index-page/fashion.webp",link:"/product/products.html?categories=fashion"},
+        {title:"Home & Furniture",image:"/assets/images/index-page/furniture.webp",link:"/product/products.html?categories=appliances"},
+        {title:"Appliances",image:"/assets/images/index-page/appliances.webp",link:"/product/products.html?categories=appliances"},
+        {title:"Two Wheelers",image:"/assets/images/index-page/bikes.webp",link:"/product/products.html?categories=automobile"},
+    ]
+    for(let i=0;i<productCategories.length;i++){
+        html+=` <div class="col-md-2 col-6 prod-cat-index">
+                    <a href="${productCategories[i].link}">
+                        <img src="${productCategories[i].image}" alt="">
+                            <h6>${productCategories[i].title}</h6>
+                    </a>
+                </div>`
+    }
+    document.getElementById("Categorieopt").innerHTML=html;
+</script>
+<script>
+    fetch("/product/product.json").then(res=>res.json()).then(result=>{
+        fashionsec(result)
+        SmartphonesSec(result)
+    }
+    )
+    //fashion sec
+    function fashionsec(data){
+        let html=""
+        let count=0
+        for(let i=0;i<data.length;i++){
+            if(data[i].category.includes("fashion")){
+                html+=`<div class="col-2 indx-fashion-inner-wrap">
+                            <a href="/product/products.html?categories=fashion" class="index-p-img">
+                                <img src="${data[i].thumbnail}" tyle="margin: 0 auto;" alt="">
+                                <h6 class="idx-fashion-title">${data[i].title}</h6>
+                                <div class="prod-card-price-wrapper mar-lef">
+                                    <h6 class="prod-card-price-h">₹${data[i].price-(data[i].price*data[i].discountPercentage/100)}</h6>
+                                    <p class="prod-card-price-orp">₹${data[i].price}</p>
+                                    <p class="prod-card-price-ofr">${data[i].discountPercentage}% Off</p>
+                                </div>
+                            </a>
+                        </div>`
+                        count++
+            }
+            if(count==10){
+                break
+            }
+        }
+        document.getElementById("indxBestFashions").innerHTML=html 
+        $('#indxBestFashions').slick({
+            arrows: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ],
+            prevArrow:
+                '<div class="slick-prev"><svg fill="#76767a"  width="15px" height="15px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#76767a" /></svg></div>',
+            nextArrow:
+                '<div class="slick-next"><svg fill="#76767a" height="15px" width="15px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve"><path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606C255,161.018,253.42,157.202,250.606,154.389z"/></svg></div>',
+
+        });
+    }
+
+    //Smartphones
+    function SmartphonesSec(data){
+        let html=""
+        let count=0
+        for(let i=0;i<data.length;i++){
+            if(data[i].category.includes("mobile")){
+                html+=`<div class="col-2 indx-fashion-inner-wrap">
+                            <a href="/product/products.html?categories=mobile" class="index-p-img">
+                                <img src="${data[i].thumbnail}" tyle="margin: 0 auto;" alt="">
+                                <h6 class="idx-fashion-title">${data[i].title}</h6>
+                                <div class="prod-card-price-wrapper mar-lef">
+                                    <h6 class="prod-card-price-h">₹${data[i].price-(data[i].price*data[i].discountPercentage/100)}</h6>
+                                    <p class="prod-card-price-orp">₹${data[i].price}</p>
+                                    <p class="prod-card-price-ofr">${data[i].discountPercentage}% Off</p>
+                                </div>
+                            </a>
+                        </div>`
+                        count++
+            }
+            if(count==10){
+                break
+            }
+        }
+        document.getElementById("indxBestSmartPhones").innerHTML=html 
+        $('#indxBestSmartPhones').slick({
+            arrows: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ],
+            prevArrow:
+                '<div class="slick-prev"><svg fill="#76767a"  width="15px" height="15px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#76767a" /></svg></div>',
+            nextArrow:
+                '<div class="slick-next"><svg fill="#76767a" height="15px" width="15px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve"><path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606C255,161.018,253.42,157.202,250.606,154.389z"/></svg></div>',
+
+        });
+    }
+</script>
+
+<script>
+</script>
+<script>
+    
+
+
+    
+</script>
+
+<script>
+</script>
+</html>
