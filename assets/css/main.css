@@ -834,9 +834,6 @@ a{
     .login-sign-right{
         margin-top: 15px;
     }
-    .buy-now-btn{
-        margin-top: 15px;
-    }
     .cart-img-w{
         height: 200px;
     }
@@ -855,5 +852,18 @@ a{
     }
     .wishlist-img-hei {
         height: 110px;
+    }
+}
+
+@media screen and (max-width:767px){
+    .prod-filter-col-wrapper{
+        margin-bottom: 10px;
+    }
+    .proddetail-card-wish{
+        top: 4%;
+        right: 8%;
+    }
+    .wf-mob-v{
+        width: 100%;
     }
 }
