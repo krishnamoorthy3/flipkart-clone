@@ -867,3 +867,38 @@ a{
         width: 100%;
     }
 }
+
+
+
+.popup-fixed{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding:10px 15px;
+    border-radius:10px ;
+    color:#172337 ;
+    gap: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
+    z-index: 99999999;
+    /* border: 3px solid #0e8132; */
+}
+.picolor{
+    color: #126a1d;
+    font-size: 25px;
+}
+.picolor-btn{
+    background: transparent;
+    border: none;
+}
+.picolor-btn i{
+    font-size: 10px;
+}
+.paddcdnone{
+    display: none;
+}

@@ -1,6 +1,6 @@
 $("#header").load("/common/header.html");
 $("#footer").load("/common/footer.html");
-
+$("#popAddtoCart").load("/common/addtocart.html")
 
 //  Nav Toggle btn
 // $(".nav-togglemob-btn").on("click", function () {
@@ -59,6 +59,7 @@ function addToCart(pid) {
                     }
                     localStorage.setItem("cart", JSON.stringify(cart));
                     productsInCart()
+                    display()
                     break;
                 }
             }
@@ -117,4 +118,19 @@ function productsInwishlist() {
     }else{
         document.getElementById("wishlistcount").innerHTML = wishlist.length
     }
+}
+
+
+
+
+
+function display(){
+    $("#popaddcart").removeClass("paddcdnone")
+    setTimeout(() => {
+        $("#popaddcart").addClass("paddcdnone")
+    }, 2000);
+}
+
+function removepopup(){
+    $("#popaddcart").addClass("paddcdnone")
 }
