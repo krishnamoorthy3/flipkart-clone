@@ -3,7 +3,7 @@
 @import url("https://db.onlinewebfonts.com/c/41ef03052040400ec0acd500990fdc97?family=URW+Imperial+W01+Regular");
 
  /*Light Mode */
-/* :root{
+:root{
     --text-color-primary:#1f1f25;
     --background-color-primary:#fff;
     --background-color-secoundary:#f1f2f4;
@@ -14,7 +14,7 @@
     --footer-background-color:#172337;
     --nav-a-hover-bg:#fafafa;
     --nav-a-hover-color:#2a55e5;
-} */
+}
  /*Dark Mode */
 /* :root{
     --text-color-primary:#ffffff;

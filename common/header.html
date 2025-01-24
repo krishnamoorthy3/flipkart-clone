@@ -42,10 +42,10 @@
                             </li>
                             <li class="nav-ul-li header-cart-pos-r" ><a href="/cart.html" class="nav-ul-li-a"><i class="fa-solid fa-cart-shopping"></i><span class="nav-ipad-span">Cart</span> <span class="header-cart-pos" id="heatercart-count">0</span></a></li>
                             <li class="nav-ul-li header-cart-pos-r"><a href="/wishlist.html" class="nav-ul-li-a"><i class="fa-regular fa-heart"></i><span class="nav-ipad-span">Wishlist</span> <span class="header-cart-pos" id="wishlistcount">0</span></a></li>
-                            <li class="nav-ul-li">
+                            <!-- <li class="nav-ul-li">
                                 <button class="nav-ul-li-a theme-toggle"id="themeToggle"><i class="fa-solid fa-moon"></i></button>
                             
-                            </li>
+                            </li> -->
                             <!-- <li class="nav-ul-li nav-mob-dn"><a href="" class="nav-ul-li-a"><i class="fa-solid fa-store"></i><span class="nav-ipad-span"> Become a Seller</span></a></li> -->
                             <li class="nav-ul-li nav-ul-show-2 nav-mob-dn"><i class="fa-solid fa-ellipsis-vertical"></i>
                                 <ul class="nav-ul-drop-2">
@@ -99,6 +99,47 @@
         </div>
     </header>
     <script src="/assets/js/main.js"></script>
+       
+<script>
+//     document.addEventListener("DOMContentLoaded", () => {
+//     const toggleButton = document.getElementById("themeToggle");
+//     const body = document.body;
+
+//     // Check saved theme in localStorage
+//     const savedTheme = localStorage.getItem("theme");
+//     console.log(savedTheme);
+    
+//     if (savedTheme) {
+       
+        
+//         body.classList.add(savedTheme);
+//         toggleButton.innerHTML =
+//             savedTheme !== "dark-mode"
+//                 ? `<i class="fa-solid fa-moon"></i>`
+//                 : `<i class="bi bi-brightness-high"></i>`;
+//     } else {
+//         // Default to light mode
+//         body.classList.add("light-mode");
+//         toggleButton.innerHTML = `<i class="bi bi-brightness-high"></i>`;
+//     }
+
+//     // Toggle theme on button click
+//     toggleButton.addEventListener("click", () => {
+//         console.log("click");
+        
+//         if (body.classList.contains("light-mode")) {
+//             body.classList.replace("light-mode", "dark-mode");
+//             toggleButton.innerHTML = `<i class="bi bi-brightness-high"></i>`;
+//             localStorage.setItem("theme", "dark-mode");
+//         } else {
+//             body.classList.replace("dark-mode", "light-mode");
+//             toggleButton.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+//             localStorage.setItem("theme", "light-mode");
+//         }
+//     });
+// });
+
+    </script>
 <script >
     document.getElementById("searchForm").addEventListener('submit', (e) => {
         e.preventDefault(); // Prevent form submission
@@ -111,45 +152,7 @@
     productsInwishlist()
 </script>
     
-    
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("themeToggle");
-    const body = document.body;
-
-    // Check saved theme in localStorage
-    const savedTheme = localStorage.getItem("theme");
-    console.log(savedTheme);
-    
-    if (savedTheme) {
-       
-        
-        body.classList.add(savedTheme);
-        toggleButton.innerHTML =
-            savedTheme !== "dark-mode"
-                ? `<i class="fa-solid fa-moon"></i>`
-                : `<i class="bi bi-brightness-high"></i>`;
-    } else {
-        // Default to light mode
-        body.classList.add("light-mode");
-        toggleButton.innerHTML = `<i class="bi bi-brightness-high"></i>`;
-    }
-
-    // Toggle theme on button click
-    toggleButton.addEventListener("click", () => {
-        if (body.classList.contains("light-mode")) {
-            body.classList.replace("light-mode", "dark-mode");
-            toggleButton.innerHTML = `<i class="bi bi-brightness-high"></i>`;
-            localStorage.setItem("theme", "dark-mode");
-        } else {
-            body.classList.replace("dark-mode", "light-mode");
-            toggleButton.innerHTML = `<i class="fa-solid fa-moon"></i>`;
-            localStorage.setItem("theme", "light-mode");
-        }
-    });
-});
-
-    </script>
+ 
     
 </body>
 </html>
