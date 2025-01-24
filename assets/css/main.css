@@ -2,6 +2,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://db.onlinewebfonts.com/c/41ef03052040400ec0acd500990fdc97?family=URW+Imperial+W01+Regular");
 
+ /*Light Mode */
+/* :root{
+    --text-color-primary:#1f1f25;
+    --background-color-primary:#fff;
+    --background-color-secoundary:#f1f2f4;
+    --background-color-third:#2a55e5;
+    --border-color-primary:#dfdfdf;
+    --text-color-price:#878787;
+    --text-color-price-secoundary:#388e3c;
+    --footer-background-color:#172337;
+    --nav-a-hover-bg:#fafafa;
+    --nav-a-hover-color:#2a55e5;
+} */
+ /*Dark Mode */
+/* :root{
+    --text-color-primary:#ffffff;
+    --background-color-primary:#131417;
+    --background-color-secoundary:#272727;
+    --background-color-third:#2a55e5;
+    --border-color-primary:#3c3c3c;
+    --text-color-price:#878787;
+    --text-color-price-secoundary:#388e3c;
+    --footer-background-color:#131417;
+    --nav-a-hover-bg:#202124;
+    --nav-a-hover-color:#fff;
+} */
+/* Light Mode */
+.light-mode {
+    --text-color-primary: #1f1f25;
+    --background-color-primary: #fff;
+    --background-color-secoundary: #f1f2f4;
+    --background-color-third: #2a55e5;
+    --border-color-primary: #dfdfdf;
+    --text-color-price: #878787;
+    --text-color-price-secoundary: #388e3c;
+    --footer-background-color: #172337;
+    --nav-a-hover-bg: #fafafa;
+    --nav-a-hover-color: #2a55e5;
+}
+
+/* Dark Mode */
+.dark-mode {
+    --text-color-primary: #ffffff;
+    --background-color-primary: #131417;
+    --background-color-secoundary: #272727;
+    --background-color-third: #2a55e5;
+    --border-color-primary: #3c3c3c;
+    --text-color-price: #878787;
+    --text-color-price-secoundary: #388e3c;
+    --footer-background-color: #131417;
+    --nav-a-hover-bg: #202124;
+    --nav-a-hover-color: #fff;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -9,8 +63,8 @@
 }
 body{
     font-family: "Overpass", sans-serif;
-    color: #1f1f25;
-    background-color: #f1f2f4;
+    color: var(--text-color-primary);
+    background-color: var(--background-color-secoundary);
 }
 ul{
     list-style: none;
@@ -18,7 +72,7 @@ ul{
 }
 a{
     text-decoration: none;
-    color:  #1f1f25;
+    color:  var(--text-color-primary);
 }
 .px-1{
     padding-top: 10px;
@@ -44,12 +98,16 @@ a{
     padding-top:20px ;
     padding-bottom:20px ;
 }
+#productDetails{
+    background-color: var(--background-color-primary);
+    margin: 20px 0;
+}
 /*=========================
     NavBar Start
 ========================*/
 .nav-row-1-wrapper{
     padding: 15px 0;
-    background-color: #fff;
+    background-color: var(--background-color-primary);
 }
 .nav-search-box{
     width: 100%;
@@ -79,6 +137,9 @@ a{
     border-radius: 5px;
     padding: 0 10px;
 }
+.fa-grip-lines{
+    color: var(--text-color-primary);
+}
 .nav-ul-wrapper{
     display: flex;
     align-items: center;
@@ -90,14 +151,16 @@ a{
     display: flex;
     gap: 10px;
     text-decoration: none;
-    color: #1f1f25;
+    color: var(--text-color-primary);
     font-size: 16px;
     padding: 6px 5px;
     border-radius: 6px;
+    background: transparent;
+    border: 0;
 }
 .nav-ul-li-a:hover{
-    background-color: #fafafa;
-    color: #2a55e5;
+    background-color: var(--nav-a-hover-bg);
+    color: var(--nav-a-hover-color);
 }
 .nav-ul-show{
     position: relative;
@@ -106,7 +169,7 @@ a{
     position: absolute;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: var(--background-color-primary);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 20px 20px;
@@ -116,7 +179,7 @@ a{
 }
 .nav-ul-drop-li-c{
     text-decoration: none;
-    color: #1f1f25;
+    color: var(--text-color-primary);
     font-size: 16px;
     display: flex;
     justify-content: space-between;
@@ -124,7 +187,7 @@ a{
     border-bottom: 1px solid #dddddd;
 }
 .nav-sign-color{
-    color: #2a55e5;
+    color: var(--background-color-third);
     font-weight: 800;
 }
 .nav-ul-drop-li{
@@ -147,11 +210,11 @@ a{
     position: absolute;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: var(--background-color-primary);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 15px 20px;
-    width: 405%;
+    width: 305px;
     right: 1%;
     display: none;
     z-index: 999;
@@ -222,16 +285,16 @@ a{
 .nav-toggle-wrapper-inner{
     width: 80%;
     height: 100vh;
-    background-color: #fff;
+    background-color: var(--background-color-primary);
 }
 .nav-mob-log-wrapp{
-    background-color: #2a55e5;
+    background-color: var(--background-color-third);
     display: flex;
     justify-content: space-between;
     padding:15px;
 }
 .nav-mob-a-ls{
-    color: #fff;
+    color: var(--text-color-primary);
     text-decoration: none;
     display: flex;
     gap: 15px;
@@ -242,7 +305,7 @@ a{
 }
 .nav-mobile-ul-t-li-a{
     text-decoration: none;
-    color: #373333;
+    color: var(--text-color-primary);
     display: flex;
     align-items: center;
     gap: 15px;
@@ -269,7 +332,7 @@ a{
     position: absolute;
     left:21%;
     top: 2%;
-    background-color: #2a55e5;
+    background-color: var(--background-color-third);
     color: #fff;
     height: 20px;
     width: 20px;
@@ -282,20 +345,21 @@ a{
 /*=========================
     Footer Start
 ========================*/
+
 .footer-wrapper{
-    background-color: #172337;
+    background-color: var(--footer-background-color);
     padding: 40px 20px;
     border-bottom: 1px solid #343434;
 }
 .footer-wrapper-2{
-    background-color: #172337;
+    background-color: var(--footer-background-color);
     padding: 20px 0;
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: 14px;
 }
 
 .footer-title{
-    color: #878787;
+    color: var(--text-color-price);
     font-size: 15px;
 }
 .footer-li-a{
@@ -316,7 +380,7 @@ a{
     padding: 15px 0 10px;
 }
 .flip-index-sec-1-inner{
-    background-color: #fff;
+    background-color: var(--background-color-primary);
     padding: 20px 0;
 }
 .prod-cat-index{
@@ -326,7 +390,7 @@ a{
     padding: 15px 0 10px;
 }
 .flip-index-sec-3-inner{
-    background-color: #fff;
+    background-color: var(--background-color-primary);
     padding: 20px 10px;
 }
 .indx-title{
@@ -336,14 +400,29 @@ a{
     font-weight: 500;
     margin: 10px 0 3px;
 }
+.indx-fashion-inner-wrap .index-p-img .idx-fashion-title{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.prod-item-card-a .card-prod-title{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 .idx-fashion-pric-dec{
     font-weight: 800;
 }
 .indx-fashion-inner-wrap{
     text-align: center;
     margin: 15px 0;
-    border: 1px solid #dfdfdf;
+    border: 1px solid var(--border-color-primary);
     border-radius: 4px;
+    background-color: var(--background-color-primary);
 }
 .indx-fashion-wrap{
     padding: 0 20px;
@@ -352,7 +431,7 @@ a{
 
 
 .prod-filter-col-wrapper{
-    background-color: #fff;
+    background-color: var(--background-color-primary);
     padding: 15px;
 }
 .prod-filter-h {
@@ -387,8 +466,8 @@ a{
 .prod-card-rating-wrap{
     display: inline-flex;
     align-items: center;
-    background-color: #388e3c;
-    color: #fff;
+    background-color: var(--text-color-price-secoundary);
+    color: var(--text-color-primary);
     gap: 3px;
     padding: 0 5px;
     border-radius: 3px;
@@ -415,13 +494,13 @@ a{
     margin: 0;
     font-size: 14px;
     text-decoration: line-through;
-    color: #878787;
+    color: var(--text-color-price);
 }
 .prod-card-price-ofr{
     margin: 0;
     font-size: 13px;
     font-weight: bold;
-    color: #388e3c;
+    color: var(--text-color-price-secoundary);
 }
 .prod-item-card-wrapper{
     position: relative;
@@ -445,10 +524,10 @@ a{
 }
 
 .prod-item-card-a:hover .card-prod-title{
-    color: #2a55e5;
+    color: var(--text-color-third);
 }
 .prod-item-card-wrapper-bg{
-    background-color: #fff;
+    background-color: var(--background-color-primary);
 }
 .prod-filter-title{
     margin: 0;
@@ -474,7 +553,7 @@ a{
 
 /* Cart Start*/
 .cart-lft-wrapper{
-    background-color: #fff;
+    background-color: var(--background-color-primary);
     padding: 20px 20px;
 }
 .cart-title{
@@ -488,7 +567,7 @@ a{
    text-align: end;
 }
 .cart-delevery-t span{
-    color: #388e3c;
+    color: var(--text-color-price-secoundary);
 
 }
 .cart-item-wrapper{
@@ -535,14 +614,14 @@ a{
 }
 .cart-tem-save-btn:hover{
     background-color: #172337;
-    color: #fff;
+    color: var(--text-color-primary);
 }
 .cart-price-wrapper{
-    background-color: #fff;
+    background-color: var(--background-color-primary);
     padding: 20px;
 }
 .cart-item-pricet{
-    color: #878787;
+    color: var(--text-color-price);
     font-weight: 600;
     font-size: 18px;
     padding-bottom: 15px;
@@ -559,7 +638,7 @@ a{
     margin: 10px 0 15px;
 }
 .cart-item-price-grn{
-    color: #388e3c;
+    color: var(--text-color-price-secoundary);
     font-size: 16px;
 }
 .price-caert-border-btm{
@@ -572,7 +651,7 @@ a{
     padding: 15px 0;
 }
 .cart-item-charge{
-    color: #388e3c;
+    color: var(--text-color-price-secoundary);
     font-weight: 600;
     font-size: 16px;
 }
@@ -581,7 +660,7 @@ a{
     padding: 15px 0;
     border: none;
     background:#ff9f00 ;
-    color: #fff;
+    color: var(--text-color-primary);
     font-weight: bolder;
 }
 .buy-now-btn{
@@ -589,7 +668,7 @@ a{
     padding: 15px 0;
     border: none;
     background:#fb641b ;
-    color: #fff;
+    color: var(--text-color-primary);
     font-weight: bolder;
 }
 .prod-detail-text-content{
@@ -611,7 +690,7 @@ a{
     text-decoration: line-through;
 }
 .prod-detail-price-ofr{
-    color: #388e3c;
+    color: var(--text-color-price-secoundary);
     font-weight: 600;
 }
 .pr-detail-ul-h{
@@ -645,7 +724,7 @@ a{
 .prod-detail-ht{
     font-weight: 600;
     font-size: 16px;
-    color: #878787;
+    color: var(--text-color-price);
 }
 .prd-detdf{
     margin: 20px 0;
@@ -672,18 +751,18 @@ a{
 }
 .prt-r-pc{
     font-size: 14px;
-    color: #878787;
+    color: var(--text-color-price);
     font-weight: 800;
 }
 .wislist-bg{
-    background-color: #fff;
+    background-color: var(--background-color-primary);
 }
 .add-to-delete-btn{
     width: 100%;
     height: 40px;
     border: none;
     background:#fb641b ;
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: 11px;
     font-weight: bolder;
 }
@@ -692,7 +771,7 @@ a{
     width: 100%;
     height: 40px;
     border: none;
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: 11px;
     font-weight: bolder;
 }
@@ -735,18 +814,18 @@ a{
     min-height: 400px;
 }
 .login-left-wrap{
-    background-color: #2a55e5;
+    background-color: var(--background-color-third);
     padding: 30px;
     min-height: 500px;
     justify-content: space-between;
     flex-direction: column;
-    color: #fff;
+    color: var(--text-color-primary);
 }
 .pl-0{
     padding-left:0 ;
 }
 .login-right-wrap{
-    background-color: #fff;
+    background-color: var(--background-color-primary);
     min-height: 500px;
     padding: 50px;
     flex-direction: column;
@@ -763,17 +842,17 @@ a{
 }
 .login-input-field:focus-visible{
     outline: none;
-    border-bottom:1px solid #2a55e5 ;
+    border-bottom:1px solid var(--background-color-third) ;
 }
 .login-p-t{
     font-size: 12px;
     margin: 15px 0 10px 0;
 }
 .login-p-t a{
-    color: #2a55e5;
+    color: var(--background-color-third);
 }
 .login-sign-right{
-    color: #2a55e5;
+    color: var(--background-color-third);
     font-size: 15px;
     background: transparent;
     border: none;
@@ -782,8 +861,8 @@ a{
     width: 100%;
     padding: 15px 0;
     border: none;
-    background:#ffffff ;
-    color: #2a55e5;
+    background:var(--background-color-primary) ;
+    color: var(--background-color-third);
     font-weight: bolder;
 }
 
@@ -878,7 +957,7 @@ a{
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    background: #fff;
+    background: var(--background-color-primary);
     padding:10px 15px;
     border-radius:10px ;
     color:#172337 ;
