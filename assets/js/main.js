@@ -1,4 +1,3 @@
-// $("#header").load("/common/header.html");
 $("#header").load("/common/header.html")
 $("#footer").load("/common/footer.html");
 $("#popAddtoCart").load("/common/addtocart.html")
@@ -22,7 +21,7 @@ function mobileremovenav() {
     Index page banner  Carosule
 =============================*/
 
-let swiper = new Swiper("#SwiperC", {
+let swiperindexpage = new Swiper("#SwiperC", {
     slidesPerView:1,
     loop: true,
     pagination: {
@@ -135,3 +134,5 @@ function display(){
 function removepopup(){
     $("#popaddcart").addClass("paddcdnone")
 }
+
+

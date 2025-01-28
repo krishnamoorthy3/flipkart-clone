@@ -61,7 +61,7 @@
 
     </style>
 </head>
-<body>
+<body class="light-mode">
     <!--------------Header Nav Bar Start------------->
     <div id="header"></div>
     <!--------------Header Nav Bar End------------->
@@ -148,8 +148,8 @@
 
 
 
-    <!-- <script src="/assets/js/jquery.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/assets/js/jquery.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
     <script src="/assets/js/swiper.js"></script>
     <script src="/assets/js/bootstrap.js"></script>
     <script src="/assets/js/slick.js"></script>
@@ -157,6 +157,7 @@
     <script src="/assets/js/main.js"></script>
 </body>
 <script>
+    
     let html="";
     let productCategories =[
         {title:"Mobile",image:"/assets/images/index-page/mobile.webp",link:"/product/products.html?categories=mobile"},
@@ -175,6 +176,7 @@
                 </div>`
     }
     document.getElementById("Categorieopt").innerHTML=html;
+    
 </script>
 <script>
     fetch("/product/product.json").then(res=>res.json()).then(result=>{

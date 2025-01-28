@@ -1,0 +1,146 @@
+
+import Navbar from "./components/Nav/Navbar.jsx";
+import Home from "./pages/Home/Home.jsx";
+import Product from "./pages/Product/Product.jsx";
+import WishList from "./pages/Wishlist/WishList.jsx";
+import ProductDetail from "./pages/ProductDetail/ProductDetail.jsx";
+import Cart from "./pages/Cart/Cart.jsx"
+import Footer from "./components/Footer/Footer.jsx"
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import "./App.css"
+const App = () => {
+    const [theme,setTheme]=useState(JSON.parse(localStorage.getItem("theme"))||false)
+    
+    const handelTheme=()=>{
+        console.log("theme",theme);
+        localStorage.setItem('theme',JSON.stringify(!theme))
+        setTheme(!theme)
+    }
+    const [items, setItems] = useState(
+        [
+            {
+                "id": 1,
+                "title": "Motorola Edge 50 Fusion (Forest Green, 256 GB)  (12 GB RAM)",
+                "description": "Motorola Edge 50 Fusion (Forest Green, 256 GB)  (12 GB RAM)",
+                "price": 27999,
+                "discountPercentage": 10,
+                "rating": 3,
+                "stock": 94,
+                "brandimg": "/assets/images/prod-img/motorola-brand.webp",
+                "category": "mobile electronics phone smartphone ",
+                "thumbnail": img1,
+                "images": [
+                    img1,
+                    img2,
+                    img3,
+                    img4,
+                    img5
+                ],
+                "spec": {
+                    "General": {
+                        "In The Box": "Handset, 68W Charger, USB Cable, Sim Tool, Protective Cover, Guides",
+                        "Model Number": "PB300007IN|PB300015IN",
+                        "Model Name": "Edge 50 Fusion",
+                        "Color": "Forest Green",
+                        "Browse Type": "Smartphones",
+                        "SIM Type": "Dual Sim",
+                        "SAR Value": "Head: 1.04 W/Kg (at 1 g), Body: 1.05 W/Kg (at 1 g)"
+                    },
+                    "Memory & Storage Features": {
+                        "Internal Storage": "256 GB",
+                        "RAM": "12 GB"
+                    },
+                    "Display Features": {
+                        "Display Size": "17.02 cm (6.7 inch)",
+                        "Resolution": "2400 x 1080 Pixels",
+                        "Display Type": "Full HD+ pOLED Endless Edge Display",
+                        "Other Display Features": "144Hz Refresh Rate, 10 Bit, 100% DCI P3, 1600 Peak Nits, 1200 HBM Nits, 360Hz Game Mode, Aqua Touch, 720Hz PWM/DC Dimming, Corning Glass 5, SGS Low Blue Light, SGS Low Motion Blur, Aspect Ratio: 20:9, Screen-to-Body Ratio: 92%"
+                    },
+                    "Os & Processor Features": {
+                        "Operating System": "Android 14",
+                        "Processor Brand": "Snapdragon",
+                        "Processor Type": "7s Gen 2"
+                    }
+                },
+                "highlights": [
+                    "12 GB RAM | 256 GB ROM",
+                    "7.02 cm (6.7 inch) Full HD+ Display",
+                    "50MP + 13MP | 32MP Front Camera",
+                    "5000 mAh Battery",
+                    "7s Gen 2 Processor"
+                ]
+            },
+        ]
+    )
+    const [cartitem,setCartitem]=useState(JSON.parse(localStorage.getItem("cartitem"))||[])
+    const [wishlist,setWishList]=useState(JSON.parse(localStorage.getItem("wishlist"))||[])
+    const localStorages=(name,data)=>{
+        localStorage.setItem(name,JSON.stringify(data))
+    }
+    
+    const handelcart=(id,category)=>{
+        const existingItem = cartitem.find(item => item.id === id);
+        if (existingItem) {
+            const updatedCart = cartitem.map(item =>
+                item.id === id
+                    ? { ...item, cartquantity: item.cartquantity + 1 }
+                    : item
+            );
+            localStorages("cartitem",updatedCart);
+            setCartitem(updatedCart)
+        } else {
+            const newCart = {
+                id: id,
+                category: category,
+                cartquantity: 1,
+            };
+            const productdata=[...cartitem, newCart]
+            localStorages("cartitem",productdata)
+            setCartitem(productdata)
+        }
+    }
+
+    const handelWishlist =(id,category) =>{
+        const existingItem = wishlist.findIndex(item => item.id === id);
+        
+        if (existingItem!=-1) {
+            const filterwishlist=wishlist.filter(item => item.id != id);
+            localStorages("wishlist",filterwishlist);
+            setWishList(filterwishlist)
+        } else {
+            const wishitemnew = {
+                id: id,
+                category: category,
+                cartquantity: 1,
+            };
+            const productdata=[...wishlist, wishitemnew]
+            localStorages("wishlist",productdata)
+            setWishList(productdata)
+        }
+    }
+    const wishlistbtncolor=(id)=>{
+        const existingColor=wishlist.findIndex(item=>item.id==id)
+        return existingColor
+    }
+    return (
+        <>
+            <div className={ theme?'dark-color':'light-color'} id="themechange">
+                <Navbar cartitem={cartitem} wishlist={wishlist} handelTheme={handelTheme} theme={theme}/>
+                <main >
+                    <Routes>
+                        <Route path="/" element={<Home items={items} setItems={setItems} />} />
+                        <Route path="/Product/:id" element={<Product items={items} handelWishlist={handelWishlist} wishlistbtncolor={wishlistbtncolor} />}/>
+                        <Route path="/Cart" element={<Cart items={items} handelcart={handelcart} setCartitem={setCartitem} cartitem={cartitem} localStorages={localStorages}/>}  />
+                        <Route path="/WishList" element={<WishList wishlist={wishlist} setWishList={setWishList}  items={items} localStorages={localStorages}  handelcart={handelcart} />} />
+                        <Route path="/ProductDetail/:id/:cat" element={<ProductDetail items={items} handelcart={handelcart} handelWishlist={handelWishlist} wishlistbtncolor={wishlistbtncolor} />} />
+                    </Routes>
+                </main>
+                <Footer/>
+            </div>
+        </>
+
+    );
+};
+
+export default App;

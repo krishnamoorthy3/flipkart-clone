@@ -16,7 +16,7 @@
                     <div class="col-1 nav-toggle-btn-wrapper">
                         <button class="nav-toggle-btn nav-togglemob-btn" onclick="mobileshownav()"><i class="fa-solid fa-grip-lines"></i></button>
                     </div>
-                    <div class=" col-lg-2 col-md-3 col-5">
+                    <div class=" col-lg-2 col-md-3 col-4">
                         <a href="/index.html" ><img src="/assets/images/logo/logo.svg" alt="" class="nav-logo"></a>
                     </div>
                     <div class="col-lg-5 col-md-4 nav-search-wrap-d">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-md-5 col-5">
                         <ul class="nav-ul-wrapper">
-                            <li class="nav-ul-li  nav-ul-show"><a href="" class="nav-ul-li-a"><i class="fa-regular fa-circle-user"></i> <span>Login</span><i class="fa-solid fa-chevron-down nav-arrow-ro"></i> </a>
+                            <li class="nav-ul-li  nav-ul-show"><a href="" class="nav-ul-li-a"><i class="fa-regular fa-circle-user"></i> <span class="d-md-block d-none">Login</span><i class="fa-solid fa-chevron-down nav-arrow-ro"></i> </a>
                                 <ul class="nav-ul-drop">
                                     <li><a href="" class="nav-ul-drop-li-c"><span>New Customer?</span><span class="nav-sign-color">Sign Up</span></a></li>
                                     <li class="nav-ul-drop-li"><a href="" class="nav-ul-li-a"><i class="fa-regular fa-circle-user"></i><span>My Profile</span></a>
@@ -42,10 +42,18 @@
                             </li>
                             <li class="nav-ul-li header-cart-pos-r" ><a href="/cart.html" class="nav-ul-li-a"><i class="fa-solid fa-cart-shopping"></i><span class="nav-ipad-span">Cart</span> <span class="header-cart-pos" id="heatercart-count">0</span></a></li>
                             <li class="nav-ul-li header-cart-pos-r"><a href="/wishlist.html" class="nav-ul-li-a"><i class="fa-regular fa-heart"></i><span class="nav-ipad-span">Wishlist</span> <span class="header-cart-pos" id="wishlistcount">0</span></a></li>
-                            <!-- <li class="nav-ul-li">
-                                <button class="nav-ul-li-a theme-toggle"id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                            <li class="nav-ul-li">
+                                <button class="nav-ul-li-a theme-toggle" onclick="themetoggle()" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
                             
-                            </li> -->
+                            </li>
+                            <li class="nav-ul-li">
+                                <div class="d-flex align-items-center justify-content-end gap-3">
+                                    <button onclick="changeFontSize(1)" class="bg-transparent border-0"><img src="../assets/images/icons/letter.png" width="20px"></button>
+                                    <button id="btn-orig" class="bg-transparent border-0"><img src="../assets/images/icons/default.png" width="20px"></button>
+                                    <button onclick="decreasefontSize(-1)" class="bg-transparent border-0"><img src="../assets/images/icons/decrease.png" width="20px"></button>
+                                </div>
+                            
+                            </li>
                             <!-- <li class="nav-ul-li nav-mob-dn"><a href="" class="nav-ul-li-a"><i class="fa-solid fa-store"></i><span class="nav-ipad-span"> Become a Seller</span></a></li> -->
                             <li class="nav-ul-li nav-ul-show-2 nav-mob-dn"><i class="fa-solid fa-ellipsis-vertical"></i>
                                 <ul class="nav-ul-drop-2">
@@ -95,49 +103,62 @@
                         </div>
                     </div>
                 </div>
+                
+
             </div>
         </div>
     </header>
+    <script src="../assets/js/jquery.js"></script>
     <script src="/assets/js/main.js"></script>
        
 <script>
-//     document.addEventListener("DOMContentLoaded", () => {
-//     const toggleButton = document.getElementById("themeToggle");
-//     const body = document.body;
+    // Initialize theme
+function darktheme() {
+    const toggleButton = document.getElementById("themeToggle");
+    const body = document.body;
 
-//     // Check saved theme in localStorage
-//     const savedTheme = localStorage.getItem("theme");
-//     console.log(savedTheme);
-    
-//     if (savedTheme) {
-       
-        
-//         body.classList.add(savedTheme);
-//         toggleButton.innerHTML =
-//             savedTheme !== "dark-mode"
-//                 ? `<i class="fa-solid fa-moon"></i>`
-//                 : `<i class="bi bi-brightness-high"></i>`;
-//     } else {
-//         // Default to light mode
-//         body.classList.add("light-mode");
-//         toggleButton.innerHTML = `<i class="bi bi-brightness-high"></i>`;
-//     }
+    // Check saved theme in localStorage
+    const savedTheme = localStorage.getItem("theme");
 
-//     // Toggle theme on button click
-//     toggleButton.addEventListener("click", () => {
-//         console.log("click");
-        
-//         if (body.classList.contains("light-mode")) {
-//             body.classList.replace("light-mode", "dark-mode");
-//             toggleButton.innerHTML = `<i class="bi bi-brightness-high"></i>`;
-//             localStorage.setItem("theme", "dark-mode");
-//         } else {
-//             body.classList.replace("dark-mode", "light-mode");
-//             toggleButton.innerHTML = `<i class="fa-solid fa-moon"></i>`;
-//             localStorage.setItem("theme", "light-mode");
-//         }
-//     });
-// });
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+        toggleButton.querySelector("i").className =
+            savedTheme === "dark-mode" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+        toggleButton.setAttribute(
+            "aria-label",
+            savedTheme === "dark-mode" ? "Enable light mode" : "Enable dark mode"
+        );
+    } else {
+        // Default to light mode
+        body.classList.add("light-mode");
+    }
+}
+
+// Toggle theme
+function themetoggle() {
+    const toggleButton = document.getElementById("themeToggle");
+    const body = document.body;
+
+    const isLightMode = body.classList.contains("light-mode");
+
+    // Toggle the theme class on body
+    body.classList.replace(isLightMode ? "light-mode" : "dark-mode", isLightMode ? "dark-mode" : "light-mode");
+
+    // Update the button icon and aria-label
+    toggleButton.querySelector("i").className = isLightMode ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    toggleButton.setAttribute(
+        "aria-label",
+        isLightMode ? "Enable light mode" : "Enable dark mode"
+    );
+
+    // Save the theme in localStorage
+    localStorage.setItem("theme", isLightMode ? "dark-mode" : "light-mode");
+}
+
+// Initialize theme on page load
+darktheme();
+
+// Attach the toggle function to the button click event
 
     </script>
 <script >
@@ -145,14 +166,71 @@
         e.preventDefault(); // Prevent form submission
         let searchValue = document.getElementById('Searchbox-prd').value;
         console.log(searchValue);
-        
         window.location.href = `/product/products.html?categories=${searchValue}`
     });
     productsInCart()
     productsInwishlist()
 </script>
     
- 
+<script>
+    
+    var $affectedElements = $("body *, main *, header *, footer *, section *, div *, #Categorieopt div *").not('meta, form, ul, link, script, img, title, i, .header-cart-pos, .swiper-button-next, .swiper-button-prev'); // Can be extended, ex. $("div, p, span.someClass")
+
+    // Storing the original size in a data attribute so size can be reset
+    $affectedElements.each( function(){
+        var $this = $(this);
+        $this.data("orig-size", $this.css("font-size") );
+    });
+    // console.log($(this.$affectedElements.find(".indx-title")));
+    
+    $("#btn-orig").click(function(){
+        $affectedElements.each( function(){
+            var $this = $(this);
+            $this.css( "font-size" , $this.data("orig-size") );
+        });
+    })
+    
+    function changeFontSize(direction){
+        let min =Infinity
+        let max =0
+        $affectedElements.each( function(){
+            var $this = $(this);
+            console.log($this.css("font-size"),this);
+            min=Math.min(parseInt($this.css("font-size")),min) || min
+            max=Math.max(parseInt($this.css("font-size")),max)||max
+        });
+        console.log("min : "+min,"max : "+max);
+        if(max<29 && min<18 ){
+            $affectedElements.each( function(){
+                var $this = $(this);
+                // console.log(parseInt($this.css("font-size"))+direction +"px");
+                $this.css( "font-size" , parseInt($this.css("font-size"))+direction +"px" );
+            });
+        }
+        
+    }
+    function decreasefontSize(num){
+        let min =Infinity
+        let max=0
+            $affectedElements.each( function(){
+                var $this = $(this);
+                // console.log($this.css("font-size"),this);
+                min=Math.min(parseInt($this.css("font-size")),min) || min
+                max=Math.max(parseInt($this.css("font-size")),max)||max
+            });
+            console.log("min : "+min,"max : "+max);
+            if(min>10 && max>19){
+                $affectedElements.each( function(){
+                    var $this = $(this);
+                // console.log(parseInt($this.css("font-size"))+num +"px");
+
+                    if(parseInt($this.css("font-size"))>12){
+                        $this.css( "font-size" , parseInt($this.css("font-size"))+num +"px");
+                    }
+                });
+            }
+    }
+</script>
     
 </body>
 </html>

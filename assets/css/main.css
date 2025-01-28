@@ -74,6 +74,25 @@ a{
     text-decoration: none;
     color:  var(--text-color-primary);
 }
+h1{
+    font-size: 31px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 25px;
+}
+h4{
+    font-size: 22px;
+}
+h5{
+    font-size: 19px;
+}
+h6{
+    font-size: 16px;
+}
+
 .px-1{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -122,6 +141,7 @@ a{
     background-color: transparent;
     height: 25px;
     width: 20px;
+    font-size: 15px;
 }
 .nav-search-box:focus-visible{
     border: none;
@@ -399,6 +419,7 @@ a{
 .idx-fashion-title{
     font-weight: 500;
     margin: 10px 0 3px;
+    font-size: 16px;
 }
 .indx-fashion-inner-wrap .index-p-img .idx-fashion-title{
     overflow: hidden;
